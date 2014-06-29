@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     <marquee direction="right">
+		<li><img src="~/images/cafe.gif" alt="Image"></li>
+            </marquee>
+<body>
+<!-- Top -->
+<div id="top">
+	
+	<div class="shell"></div>
+
+    <head>
+  
+            <link href="~/Content/style.css" rel="stylesheet">
+            <style type="text/css">
+              body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+              }
+            </style>
+            <link href="~/Content/style.css" rel="stylesheet">
+ </head>
+    <body>
+              
+             
+            </ul>
+  
+         
+    <div class="container">                     
+                 
+    <li>@Html.ActionLink("Logout", "Logout","LogOut" )</li>
+		<span>Vegetable &amp; Rice Topping</span>
+<form action="/UploadPictures/Upload" method="post" enctype="multipart/form-data" >
+
+    Upload Image: <input type="file" name="image" />
+ 
+     
+ 
+    <input type="submit" value="upload" />
+           </div>   
+         <hr />
+<!-- Footer -->
+         <div id="footer">
+          <div style="margin-left:500px" class="center"> <a href="~/Login/HomeCustomer">Home</a> <span>|</span> <a href="~/About/About">About</a> <span>|</span><a href="~/Home/search">Search</a></div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+ 
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $('.carousel').carousel()
+    </script>
+
+     </div>
+    </body>
+</html>
+
+
+    } 
+	
+	

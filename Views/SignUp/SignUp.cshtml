@@ -1,0 +1,132 @@
+﻿
+
+@model MvcApplication2.Models.Customer
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutchicken.cshtml";
+}
+   
+ <div align="center">
+            <a href="~/SignUp/SignUp"><img src="~/images/graphics-food-282413.gif" alt="Image"></a>
+        </div>
+<div id="checking">Checking...</div>
+<div    align="center">
+    <h1> SignUp!</h1>
+    
+     <!--<form action="/SignUp/Add" method="post">-->
+
+     @using (Html.BeginForm("Add", "SignUp", FormMethod.Post))
+    {
+         @Html.ValidationSummary(true);
+       <br />
+         <table>
+             <tr>
+           
+   <td>@Html.LabelFor(model => model.Username)  </td>
+   <td>@Html.EditorFor(model => model.Username)</td>
+   <td>@Html.ValidationMessageFor(model=>model.Username)</td>
+
+       </tr>
+            
+   <tr>
+                 <td>@Html.LabelFor(model => model.email)</td>
+      <td>@Html.TextBoxFor(model => model.email,new { id = "email",name="email" })</td><td> <input type="button" id="b1" value="Check Availabilty" /><br /></td>
+      <td>@Html.ValidationMessageFor(model=>model.email)</td>
+        </tr>
+             <tr>
+                 <td>@Html.LabelFor(model => model.Password)</td>
+        <td>@Html.PasswordFor(model => model.Password,new { id = "Password",name="Password" })</td></tr>
+              <td>@Html.ValidationMessageFor(model=>model.Password)</td>
+  <tr>r
+                 <td>@Html.LabelFor(model => model.Address)</td>
+      <td>@Html.TextBoxFor(model => model.Address,new { id = "Address",name="Address" })</td>
+       <td>@Html.ValidationMessageFor(model=>model.Address)</td>
+
+  </tr>
+    <tr>
+                 <td>@Html.LabelFor(model => model.Phone)</td>
+        <td>@Html.TextBoxFor(model => model.Phone,new { id = "Phone",name="Phone" })</td>
+         <td>@Html.ValidationMessageFor(model=>model.Phone)</td>
+    </tr>
+    @*<tr>
+                 <td>Country:</td><td><input type="text" name="Country" id="country" /> </td></tr>
+    <tr>*@
+             
+           <tr><td>@Html.LabelFor(model => model.Country)one</td>
+               <td><select id="Country" name="Country">
+                   <option ></option>
+                   <option id="pakistan">Pakistan</option>
+                   <option id="india">India</option>
+                   <option id="america">America</option>
+                   <option id="Itley">America</option>
+                   <option id="Sri Lanka">America</option>
+                   <option id="Europe">America</option>
+                   <option id="Paris">America</option>
+                   <option id="Japan">America</option>
+                  
+              </select></td>   <td>@Html.ValidationMessageFor(model=>model.Country)</td> </tr>
+             <tr>
+                 <td>@Html.LabelFor(model => model.City)</td>
+                 <td>@Html.TextBoxFor(model => model.City,new { id = "City",name="City" })</td>
+                  <td>@Html.ValidationMessageFor(model=>model.City)</td>
+
+             </tr>
+    <tr>
+                 <td>@Html.LabelFor(model => model.Gender)</td>
+        <td><select id="Gender" name="Gender">
+                   <option ></option>
+                   <option id="male">Male</option>
+                   <option id="female">Female</option>
+                  
+              </select></td>  <td>@Html.ValidationMessageFor(model=>model.Gender)</td>
+
+    </tr>
+   <tr>
+                 <td> Date Of Birth:</td>
+       <td>@Html.TextBoxFor(model => model.dob,new { id = "dob",name="dob" })</td>  <td>@Html.ValidationMessageFor(model=>model.dob)</td>
+
+   </tr>
+   <tr>
+                 <td><input type="submit" id="b2" value="SignUp" /></td></tr>
+             </table>
+     }
+
+    <div id="result"></div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b1').click(function () {
+
+                var email = $('#email').val();
+
+                //alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/SignUp/CheckUserName?email=" + email, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database");
+
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</div>
+<div id="footer">
+          <div style="margin-left:500px" class="center"> <a href="~/Home">Home</a> <span>|</span> <a href="~/Login">Login</a> <span>|</span> <a href="~/SignUp/SignUp">Sign Up</a> <span>|</span> <a href="~/About/About">About</a> </div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    }

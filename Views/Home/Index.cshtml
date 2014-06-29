@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout="~/Views/Shared/_LayoutMain.cshtml";
+}
+             @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     <ul>
+        <marquee direction="right">
+		<li><img src="~/images/chef.gif" alt="Image" height="150" width="150"></li>
+            </marquee>
+	</ul>
+    <div class="body">
+		<div>
+			<div class="header">
+     
+			<ul>
+					<li>
+                         @Html.ActionLink("HOME", "Index","Home" ) 
+						
+					</li>
+					<li>
+                        
+                         @Html.ActionLink("RECIPIE BOOKS", "Recipes","Recipes" ) 
+						
+					</li>
+					 <li>
+						<a href="~/Home/Gallary">GALLARY</a>
+					</li>
+					<li>
+                        @Html.ActionLink("VIDEOS", "Videos","Home" ) 
+					
+					</li>
+					<li>
+                         @Html.ActionLink("ABOUT", "About","About" ) 
+						
+					</li>
+               <li>
+						<a href="~/Home/search">Search</a>
+					</li>
+
+				</ul>
+			</div>
+
+
+
+			<div class="body">
+				<div>
+					<a href="~/Home/index"><img src="~/images/turkey.jpg" alt="Image"></a>
+				</div>
+			</div>
+			<div class="footer">
+				<ul>
+					<li>
+						<h2><a href="~/Home/Gallary">GALLARY</a><img src="~/images/featured.jpg" alt="Image"> </h2>
+					</li>
+					<li>
+						<h2>@Html.ActionLink("RECIPIE BOOKS", "Recipes","Recipes" ) <img src="~/images/a-z.jpg" alt="Image"></h2>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>@Html.ActionLink("VIDEOS", "Videos","Home" ) <img src="~/images/videos.jpg" alt="Image"></h2>
+						
+					</li>
+					<li>
+						<h2> @Html.ActionLink("ABOUT", "About","About" )<img src="~/images/blog.jpg" alt="Image"></h2>
+					
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<div>
+        <li>@Html.ActionLink("Sign Up", "SignUp","SignUp" )</li>
+        <li>@Html.ActionLink("Admin Login", "Admin","Login" )</li>
+                <li>@Html.ActionLink("User Login", "Index","Login" )</li>
+				<h3>@Html.ActionLink("Cooking Video", "Videos","Videos" )<img src="~/images/cooking-video.png" alt="Image"></h3>
+				
+				<span>Vegetable &amp; Rice Topping</span>
+    
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+    } 
+	
+	

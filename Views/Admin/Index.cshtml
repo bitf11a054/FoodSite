@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     
+    <div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+						<a href="~/Admin/Add">Add Items</a>
+					</li>
+					<li>
+						<a href="~/Admin/EditItem">Edit Items</a>
+					</li>
+					<li>
+						<a href="~/Admin/DelItem">Delete Items</a>
+					</li>
+					<li>
+						<a href="~/Admin/ViewAllItems">Show All Recipes</a>
+					</li>
+					@*<li>
+						<a href="~/Admin/search">Search</a>
+					</li>*@
+					
+                  <li>
+                      <a href="~/Admin/Gallary">Gallary</a>
+                  </li>
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+					
+						<div>
+		<div>
+							<img src="~/images/chicken-mushroom.jpg" alt="Image">
+                           </div>
+							
+						</div>
+					
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+                <li>@Html.ActionLink("Logout", "Admin","Login" )</li>
+				<h3>Cooking Video</h3>
+				<a href="~/Videos/Videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+		
+		</div>
+	</div>
+<div>
+<div id="footer">
+          <div style="margin-left:500px" class="center"> <a href="~/Home">Home</a> <span>|</span> @Html.ActionLink("Upload pictures", "Upload","UploadPictures" )  <span>|</span> <a href="~/About/About">About</a> </div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+    } 
+	
+	
+	

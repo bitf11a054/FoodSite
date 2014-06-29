@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "_LayoutMain";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    @RenderSection("Title",required:false)
+   
+	<link rel="stylesheet" type="text/css" href="~/Content/style.css">
+</head>
+<body>
+	<div class="header">
+		<div>
+			@RenderSection("Header", required:false)
+		</div>
+	</div>
+	@RenderSection("Content",required:false)
+
+    </body>
+    </html>

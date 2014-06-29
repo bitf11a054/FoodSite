@@ -1,0 +1,54 @@
+﻿@model MvcApplication2.Models.Item
+@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+             @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+    <div align="center">
+            <a href="~/Login"><img src="~/images/coffeecup_cookies_book_hw.gif" alt="Image"></a>
+        </div>
+<br /> <br />
+<div id="leftblockonePan" align="center" style="text-align:left">
+    <form action="/Admin/AddItem" method="post" enctype="multipart/form-data" >
+
+        <table style="margin-left:200px">
+          <tr><td><p >Name of Book: </p></td>
+              <td> 
+              <input type="text" id="Name" name="Name"/></td></tr>
+          <tr><td><p >Number of books: </p></td>
+              <td> <input type="text" id="Quantity" name="Quantity" /></td></tr>
+ 		  <tr><td><p >Price : </p> </td>
+               <td> <input type="text" id="Price" name="Price"/></td></tr>
+            
+    <tr><td>Upload Image: <input type="file" name="Path" id="Path" /></td></tr>
+            
+ <tr><td>
+    <input type="submit" value="upload" /></td></tr>
+            </table>
+        </form>
+
+    
+  </div>
+<div id="footer">
+          <div style="margin-left:500px" class="center"> <a href="~/Admin/Index">Home</a>  <span>|</span>@Html.ActionLink("Upload pictures", "Upload","Admin" )  <span>|</span> <a href="~/About/About">About</a><span>|</span> <a href="~/Admin/search">Search</a><span></span></div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+
+
+    } 
+	

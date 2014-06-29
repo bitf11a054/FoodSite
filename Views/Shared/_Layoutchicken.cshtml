@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "_Layoutchicken";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Food &amp; Home Page</title>
+	<link rel="stylesheet" type="text/css" href="~/Content/style.css">
+</head>
+<body>
+	<div class="header">
+		<div>
+			<a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+		</div>
+	</div>
+	
+ @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)
+
+    </body>
+    </html>
+
+
+

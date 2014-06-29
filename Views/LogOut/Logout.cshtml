@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Logout";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     <div>
+            <a href="~/LogOut/Logout"><img src="~/images/images.jpg" alt="Image"></a>
+        </div>
+	</div>
+<div id="top">
+  <div class="shell">
+    <!-- Header -->
+          <div id="header">
+      <div id="navigation">
+        
+      </div>
+    </div>
+
+    <!-- End Header -->
+    
+      
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Welcome To Login Page.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Login Form</legend>
+        <ul>
+          <li>
+            <input type="text" value="Username" />
+              &nbsp;
+             
+            </li>
+            <li>
+                 <input type="password" value="password" />
+              &nbsp;
+              
+            </li>
+            <li>
+                <input type="password" value="Confirmpassword" />
+              &nbsp;
+              
+            </li>
+        </ul>
+            <form action="~/Recipes/Recipes" method="post"><input type="submit" value="Login" /></form>
+           
+    </fieldset>
+}
+
+       <!-- Footer -->
+        <div id="footer">
+          <div class="left"> <a href="~/Home">Home</a> <span>|</span> <a href="~/Login">Login</a> <span>|</span> <a href="~/SignUp/SignUp">Sign Up</a> <span>|</span> <a href="~/About/About">About</a>  </div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+        <!-- End Footer -->
+      
+
+
+    } 
+	
+	
+       

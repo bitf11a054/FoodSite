@@ -1,0 +1,73 @@
+﻿
+@model MvcApplication2.Models.Item
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+ <div align="center">
+<img src="~/images/animated_female_scientist_search_earth_hg_wht_251.gif" alt="Image">
+    </div>
+<form action="/Home/search_Books">
+<div    align="center">
+    Enter Title: <input type="text" name="search" id="search" /> 
+       @*  <input type="button" id="b1" value="Check" /><br />*@
+    
+     <input type="submit" id="b2" value="Show Details" /><br />
+    </form>
+
+
+    <div id="result"></div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+
+            $('#b1').click(function () {
+
+                var userName = $('#search').val();
+
+                // alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/Admin/CheckUserName?search=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("Book Exist");
+
+                    }
+                    else {
+                        $('#result').text("Book Dont Exist");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</div>
+<div id="footer">
+          <div style="margin-left:600px" class="center"> <a href="~/Home/Index">Home</a> <span>|</span>  @Html.ActionLink("Recipe books", "Recipes","Recipes" )   <span>|</span> <a href="~/About/About">About</a><span>|</span>  @Html.ActionLink("Videos", "Videos","Home" )</div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>   
+
+    } 
+	
+	
+    

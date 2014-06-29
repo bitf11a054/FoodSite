@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layoutchicken.cshtml";
+}
+
+	<div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+						<a href="~/Home">Home</a>
+					</li>
+					<li>
+						<a href="~/Recipes/Recipes">Recipes Book</a>
+					</li>
+					<li>
+						 @Html.ActionLink("UPLOAD PICTURES", "Upload","UploadPictures" ) 
+					</li>
+					<li>
+						<a href="~/Videos/Videos">Videos</a>
+					</li>
+					<li class="current">
+						<a href="~/About/About">About</a>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+					<div>
+						<div>
+							<h4>
+Welcome to Food And Recepies!</h4>
+							<p>
+Food And Recepies features the largest collection of professionally-tested recipes online from food experts at the magazines and cookbooks you love and trust--including Cooking Light, Southern Living, Sunset, Coastal Living, Real Simple, and more
+							</p>
+			
+							<p>
+								Save your favorite recipes. Build and email your shopping lists. Create and pass around menus for upcoming get-togethers. Rate the recipes and discover new must-try dishes from thousands of reviews from fellow cooks.
+							</p>
+							<h4>Be Part of Our Community</h4>
+							<p>
+								This is just the first course! In the coming months we'll be beefing up search, uploading even more gorgeous photos, and expanding personalized features to make MyRecipes.com the best food site online. Sign up for our weekly newsletter to get content updates and notification of site improvements.
+							</p>
+							<p>
+								<br >Save your favorite recipes. Build and email your shopping lists. Create and pass around menus for upcoming get-togethers. Rate the recipes and discover new must-try dishes from thousands of reviews from fellow cooks.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h3>Cooking Video</h3>
+				<a href="~/Videos/Videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+
+		</div>
+	</div>
+</body>
+</html>

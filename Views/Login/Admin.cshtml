@@ -1,0 +1,57 @@
+﻿@model MvcApplication2.Models.Admin
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    }
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+    <div align="center">
+     <table>
+         <tr>
+            <td><a href="~/Login/Admin"><img src="~/images/graphics-food-750233.gif" alt="Image"></a></td>
+         <td><a href="~/Login/Admin"><img src="~/images/graphics-food-750233.gif" alt="Image"></a></td>
+         <td><a href="~/Login/Admin"><img src="~/images/graphics-food-750233.gif" alt="Image"></a></td>
+             </tr>
+     </table>
+        </div>
+	<h1><span ><strong><em style="margin-left:250px">Admin Login!</em></strong></span></h1> <br />
+
+    <form action="/Login/AdminLogin" method="post">
+            <table style="margin-left:300px">
+		<tr><td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email,new { id = "Email",name="Email" })</td>
+		</tr>
+		<tr>
+        <td>@Html.LabelFor(model => model.Password)</td>
+		 <td>@Html.PasswordFor(model => model.Password,new { id = "Password",name="Password" })</td>
+        </tr>
+        <tr><td><input type="submit" value="Log in"/></td></tr>
+    </table>
+	</form>
+     
+       <!-- Footer -->
+        <div id="footer">
+          <div style="margin-left:500px" class="center"> <a href="~/Home">Home</a> <span>|</span> <a href="~/Login">Login</a> <span>|</span> <a href="~/SignUp/SignUp">Sign Up</a> <span>|</span> <a href="~/About/About">About</a></div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+        <!-- End Footer -->
+      
+
+    } 
+	
+	
+ 

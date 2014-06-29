@@ -1,0 +1,43 @@
+﻿@model List< MvcApplication2.Models.Item>
+
+@{
+    ViewBag.Title = "ViewAllItems";
+    Layout = "~/Views/Shared/_Layoutchicken.cshtml";
+}
+   
+<div >
+          <div style="margin-left:1000px" class="center"> <a href="~/Admin/Index">Home</a> <span>|</span>@Html.ActionLink("Upload pictures", "Upload","UploadPictures" )  <span>|</span> <a href="~/About/About">About</a><span>|</span> <a href="~/Admin/search">Search</a><span></span></div>
+         <!-- <div class="right"> &copy; faexcessories.com </a> </div>-->
+        </div>
+<div align="center">
+<img src="~/images/booklink.gif" alt="" height="150" width="150">
+    </div>
+@if(Model!=null)
+{
+ foreach(var x in Model)
+ {   
+             <figure class="img-indent" ><img src="~/Files/@x.Path" alt="" width="10%" height="10%"/>
+                                            <div class="extra-wrap" >
+                                            	<h3>@x.Name</h3>
+                                                <p class="p1">Quantity: @x.Quantity</p>
+                                                <p class="p1">Price: Rs: @x.Price</p>
+                                                
+
+                                                
+                                                    
+                                                    @using (Html.BeginForm("DeleteItem1", "Admin",FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("id", @x.IID);
+                                                        <button type=" submit" >Delete</button>
+                                                    }
+
+                                                     
+                                                    @using (Html.BeginForm("Update", "Admin",FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("id", @x.IID);
+                                                        <button type=" submit" >Update</button>
+                                                    }
+                                            </div>
+                                                </figure>
+    }
+    }

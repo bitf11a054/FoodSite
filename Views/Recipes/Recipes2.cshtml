@@ -1,0 +1,115 @@
+﻿@model List< MvcApplication2.Models.Item>
+@{
+    ViewBag.Title = "recipies";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+	   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     <div class="body">
+		<div>
+			<div class="header">
+		<ul>
+					<li>
+						@Html.ActionLink("HomeCustomer", "Index","Login" ) 
+					</li>
+					<li>
+						 @Html.ActionLink("RECIPIE BOOKS", "Recipes2","Recipes" ) 
+					</li>
+					<li>
+						 @Html.ActionLink("UPLOAD PICTURES", "Upload","UploadPictures" )
+					</li>
+					<li>
+						@Html.ActionLink("VIDEOS", "Videos","Videos" ) 
+					</li>
+					<li>
+						 @Html.ActionLink("ABOUT", "About","About" ) 
+					</li>
+					
+				</ul>
+			</div>
+
+                                @if(Model!=null)
+{
+ foreach(var x in Model)
+ {
+			<div class="body">
+				<div id="content">
+
+					<div>
+						<ul>
+							<li>
+                                
+								<img src="~/Files/@x.Path" alt="Image" height="150" width="150" />
+                               
+                                    
+								    <div class="extra-wrap" >
+                                            	<h3>@x.Name</h3>
+                                                <p class="p1">Quantity: @x.Quantity</p>
+                                                <p class="p1">Price: Rs: @x.Price</p>
+                                         <div style="color:#0000FF" id="result"></div>
+                                        @using (Html.BeginForm("Add", "Recipes",FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("id", @x.IID);
+                                                      
+                                            <input type="submit" value="Add to cart" />
+                                                
+                                                    }
+                                              
+                                            </div>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+                                }
+                                }
+
+                   
+		</div>
+		<div>
+			<div>
+                
+                     <div>
+                 @using (Html.BeginForm("ShowOrder", "Recipes",FormMethod.Post))
+                                                    {
+                <input type="submit" value="Show Order" />
+                 }
+            </div>
+                                        
+       <li>@Html.ActionLink("Logout", "Logout","LogOut" )</li>
+				<h3>Cooking Video</h3>
+				<a href="~/Recipes/Recipes"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+	</div>
+</div>
+        </div>
+
+
+    } 
+	
+	
+	
+	

@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout="~/Views/Shared/_LayoutMain.cshtml";
+}
+   @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+     <div class="body">
+		<div>
+			<div class="header">
+			<ul>
+					<li>
+                         @Html.ActionLink("HOME", "HomeCustomer","Login" ) 
+						@*<a href="~/Home">HOME</a>*@
+					</li>
+					<li>
+                        
+                         @Html.ActionLink("RECIPIE BOOKS", "Recipes2","Recipes" ) 
+						@*<a href="~/Recipes/Recipes">RECIPIE BOOKS</a>*@
+					</li>
+					<li>
+                         @Html.ActionLink("UPLOAD PICTURES", "Upload","UploadPictures" ) 
+					@*	<a href="~/UploadPictures/Upload">UPLOAD PICTURES</a>*@
+					</li>
+					<li>
+                        @Html.ActionLink("VIDEOS", "Videos","Videos" ) 
+						@*<a href="~/Videos/Videos">VIDEOS</a>*@
+					</li>
+					<li>
+                         @Html.ActionLink("ABOUT", "About","About" ) 
+						@*<a href="~/About/About">ABOUT</a>*@
+					</li>
+					
+				</ul>
+			</div>
+
+
+
+			<div class="body">
+				<div>
+					<a href="~/Videos/Videos"><img src="~/images/turkey.jpg" alt="Image"></a>
+				</div>
+			</div>
+			<div class="footer">
+				<ul>
+					<li>
+						<h2>@Html.ActionLink("UPLOAD PICTURES", "Upload","UploadPictures" )<img src="~/images/featured.jpg" alt="Image"> </h2>
+					</li>
+					<li>
+						<h2>@Html.ActionLink("RECIPIE BOOKS", "Recipes","Recipes" ) <img src="~/images/a-z.jpg" alt="Image"></h2>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h2>@Html.ActionLink("VIDEOS", "Videos","Videos" ) <img src="~/images/videos.jpg" alt="Image"></h2>
+						
+					</li>
+					<li>
+						<h2>@Html.ActionLink("BLOG", "Index","Blog" )<img src="~/images/blog.jpg" alt="Image"></h2>
+					
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<div>
+                <li>@Html.ActionLink("Logout", "Logout","LogOut" )</li>
+				<h3>@Html.ActionLink("Cooking Video", "Videos","Videos" )<img src="~/images/cooking-video.png" alt="Image"></h3>
+				
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+
+    } 
+	
+	
+	

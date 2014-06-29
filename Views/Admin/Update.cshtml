@@ -1,0 +1,58 @@
+﻿@model MvcApplication2.Models.Item
+@{
+    ViewBag.Title = " Update1";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+    @section Title
+             {
+                 <title>Food &amp; Home Page</title>
+                 
+                 }       
+
+@section Header
+{
+    
+    <a href="~/Home"><img src="~/images/logo.png" alt="Logo"></a>
+    
+      
+
+    }  
+@section Content
+{
+   <h2>Edit</h2>
+      <form action="/Admin/Update1" method="post">
+<div id="content" class="float_r">
+        	
+            
+            <div class="content_half float_l checkout">
+		<img src="~/Files/@ViewBag.X.Path" alt="" width="20%" height="20%"/><br />
+                <br />
+             	 Product ID :  
+                  <input type="text"  name="id" value="@ViewBag.X.IID" style="width:300px;" readonly="true"  />
+                <br />
+                <br />
+                Product Name :  
+                  <input type="text"  name="name" value="@ViewBag.X.Name" style="width:300px;"  />
+                <br />
+                <br />
+              Product price:
+                <input type="text"  name="price" value="@ViewBag.X.Price" style="width:300px;"  />
+                <br />
+                <br />
+
+                Product Qyantity:
+                <input type="text"  name="quantity" value="@ViewBag.X.Quantity" style="width:300px;"  />
+                <br />
+                <br />
+              
+           <input type="submit" class="submit_btn" name="submit" id="submit" value="Update" />
+                       
+                 
+
+            </div>
+       </form>
+ 
+    } 
+	
+	
